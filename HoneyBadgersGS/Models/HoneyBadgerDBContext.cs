@@ -243,13 +243,19 @@ namespace HoneyBadgers._0.Models
             modelBuilder.Entity<Friendship>(entity =>
             {
                 entity.Property(e => e.FriendshipId)
-                    .HasColumnName("friendListID")
+                    .HasColumnName("friendshipID")
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.AccountId1)
-                    .HasColumnName("accountID1");
-                entity.Property(e => e.AccountId1)
-                    .HasColumnName("accountID2");
+                    .HasColumnName("accountId1")
+                    .HasMaxLength(450);
+                entity.Property(e => e.AccountId2)
+                    .HasColumnName("accountId2")
+                    .HasMaxLength(450);
+                // entity.HasOne(d => d.AccountId)
+                //     .WithMany(p => p.Account)
+                //     .HasForeignKey(d => d.AccountId)
+                //     .HasConstraintName("account_FK_FriendshipId");
             });
 
             modelBuilder.Entity<Game>(entity =>

@@ -18,21 +18,21 @@ namespace HoneyBadgers._0.DataLayers
             return _db.Friendship.ToList();
         }
 
-        public bool Add(Friendship friendship)
+        public int Add(Friendship friendship)
         {
             _db.Friendship.Add(friendship);
             _db.SaveChangesAsync();
-            return true;
+            return 1;
         }
 
-        public bool Update(Friendship friendship)
+        public int Update(Friendship friendship)
         {
             _db.Friendship.Update(friendship);
             _db.SaveChangesAsync();
-            return true;
+            return 1;
         }
 
-        public Friendship GetData(string id)
+        public Friendship GetData(int id)
         {
             Friendship friendship = _db.Friendship.Find(id);
 
@@ -44,7 +44,7 @@ namespace HoneyBadgers._0.DataLayers
             return friendship;
         }
 
-        public int Delete(string id)
+        public int Delete(int id)
         {
             Friendship friendship = _db.Friendship.Find(id);
             _db.Friendship.Remove(friendship);

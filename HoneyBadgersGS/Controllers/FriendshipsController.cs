@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using HoneyBadgers._0.BusinessLogic;
 using HoneyBadgers._0.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace HoneyBadgers._0.Controllers
 {
@@ -11,107 +9,52 @@ namespace HoneyBadgers._0.Controllers
     [ApiController]
     public class FriendshipsController : ControllerBase
     {
-        private readonly HoneyBadgerDBContext _context;
+        private IFriendshipLogic _friendshipLogic;
 
-        public FriendshipsController(HoneyBadgerDBContext context)
+        public FriendshipsController(IFriendshipLogic friendshipLogic)
         {
-            _context = context;
+            _friendshipLogic = friendshipLogic;
         }
 
-        // GET: api/Friendships
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Friendship>>> GetFriendship()
+        [HttpGet("getfriendships")]
+        [Route("api/Friendships")]
+        public IEnumerable<Friendship> GetAllFriendships()
         {
-            return await _context.Friendship.ToListAsync();
+            return _friendshipLogic.GetAll();
         }
-
-        // GET: api/Friendships/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Friendship>> GetFriendship(int id)
-        {
-            var friendship = await _context.Friendship.FindAsync(id);
-
-            if (friendship == null)
-            {
-                return NotFound();
-            }
-
-            return friendship;
-        }
-
-        // PUT: api/Friendships/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutFriendship(int id, Friendship friendship)
-        {
-            if (id != friendship.FriendshipId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(friendship).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!FriendshipExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/Friendships
+        
+        //TODO: Convert everything below this comment and remove DB context.
+        
+        //Add Single Friendship to Record
         [HttpPost]
-        public async Task<ActionResult<Friendship>> PostFriendship(Friendship friendship)
+        [Route("api/Friendships/Add")]
+        public int Add(Friendship friendship)
         {
-            _context.Friendship.Add(friendship);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (FriendshipExists(friendship.FriendshipId))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return CreatedAtAction("GetFriendship", new { id = friendship.FriendshipId }, friendship);
+            return _friendshipLogic.Add(friendship);
         }
 
-        // DELETE: api/Friendships/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Friendship>> DeleteFriendship(int id)
+        //Updates Friendships in record
+        [HttpPut]
+        [Route("api/Friendships/Update")]
+        public int Update(Friendship friendship)
         {
-            var friendship = await _context.Friendship.FindAsync(id);
-            if (friendship == null)
-            {
-                return NotFound();
-            }
-
-            _context.Friendship.Remove(friendship);
-            await _context.SaveChangesAsync();
-
-            return friendship;
+            return _friendshipLogic.Update(friendship);
         }
 
-        private bool FriendshipExists(int id)
+        //Get Single Friendship Details
+        [HttpGet("getfriendships/{id}")]
+        [Route("api/Friendships/Details/{id}")]
+        public Friendship Details(int id)
         {
-            return _context.Friendship.Any(e => e.FriendshipId == id);
+            return _friendshipLogic.Details(id);
+        }
+
+        //Delete friendship from records
+        [HttpDelete]
+        [Route("api/Friendships/Delete")]
+        public int Delete(int id)
+        {
+            return _friendshipLogic.Delete(id);
         }
     }
 }

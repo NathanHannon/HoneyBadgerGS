@@ -18,22 +18,22 @@ namespace HoneyBadgers._0.BusinessLogic
             return _friendshipDal.GetAll();
         }
 
-        public bool Add(Friendship friendship)
+        public int Add(Friendship friendship)
         {
             return _friendshipDal.Add(friendship);
         }
 
-        public bool Update(Friendship friendship)
+        public int Update(Friendship friendship)
         {
             return _friendshipDal.Update(friendship);
         }
 
-        public Friendship Details(string id)
+        public Friendship Details(int id)
         {
             return _friendshipDal.GetData(id);
         }
 
-        public int Delete(string id)
+        public int Delete(int id)
         {
             return _friendshipDal.Delete(id);
         }
