@@ -3,7 +3,7 @@ import { Route } from 'react-router';
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { Profile } from './components/Profile/profile.component';
-import { FriendList } from './components/Friend-List/friendList-Component';
+import { friendList } from './components/Friend-List/friendList.component';
 import { GameDetails } from './components/Game-Detail/gameDetails.component';
 import { Cart } from './components/Cart/Cart';
 import { ReviewForm } from './components/Review/review_write';
@@ -36,7 +36,7 @@ export default class App extends Component {
         <Route exact path='/Profile' component={Profile} />
         <Route path='/Wishlist' component={Wishlist} />
         <Route path='/Shipment' component={Shipment} />
-        <Route exact path='/FriendList' component={FriendList} />
+        <Route exact path='/friendList' component={friendList} />
         <Route path={ApplicationPaths.ApiAuthorizationPrefix} component={ApiAuthorizationRoutes} />
       </Layout>
     );

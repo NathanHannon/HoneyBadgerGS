@@ -15,7 +15,8 @@ export class Home extends Component {
     componentDidMount() {
         fetch("https://localhost:5001/api/games/getGames")
             .then(response => response.json())
-            .then(data => this.setState({ games: data }))
+            .then(data => this.setState({ games: data }, console.log(data)))
+        
     }
 
 

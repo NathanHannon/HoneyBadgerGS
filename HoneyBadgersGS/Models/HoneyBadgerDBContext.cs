@@ -25,7 +25,7 @@ namespace HoneyBadgers._0.Models
         public virtual DbSet<Cart> Cart { get; set; }
         public virtual DbSet<DeviceCodes> DeviceCodes { get; set; }
         public virtual DbSet<Event> Event { get; set; }
-        public virtual DbSet<FriendList> FriendList { get; set; }
+        public virtual DbSet<Friendship> Friendship { get; set; }
         public virtual DbSet<Game> Game { get; set; }
         public virtual DbSet<PersistedGrants> PersistedGrants { get; set; }
         public virtual DbSet<Profile> Profile { get; set; }
@@ -174,7 +174,8 @@ namespace HoneyBadgers._0.Models
                     .HasColumnName("eventID")
                     .ValueGeneratedNever();
 
-                entity.Property(e => e.AccountId).HasColumnName("accountID");
+                entity.Property(e => e.AccountId)
+                    .HasColumnName("accountID");
 
                 entity.Property(e => e.DateOfEvent)
                     .HasColumnName("dateOfEvent")
@@ -189,13 +190,26 @@ namespace HoneyBadgers._0.Models
                     .HasColumnType("text");
             });
 
-            modelBuilder.Entity<FriendList>(entity =>
+            modelBuilder.Entity<Friendship>(entity =>
             {
-                entity.Property(e => e.FriendListId)
-                    .HasColumnName("friendListID")
+                entity.Property(e => e.FriendshipId)
+                    .HasColumnName("friendshipID")
                     .ValueGeneratedNever();
 
+<<<<<<< HEAD
                 entity.Property(e => e.AccountId).HasColumnName("accountID");
+=======
+                entity.Property(e => e.AccountId1)
+                    .HasColumnName("accountId1")
+                    .HasMaxLength(450);
+                entity.Property(e => e.AccountId2)
+                    .HasColumnName("accountId2")
+                    .HasMaxLength(450);
+                // entity.HasOne(d => d.AccountId)
+                //     .WithMany(p => p.Account)
+                //     .HasForeignKey(d => d.AccountId)
+                //     .HasConstraintName("account_FK_FriendshipId");
+>>>>>>> Sprint-3
             });
 
             modelBuilder.Entity<Game>(entity =>

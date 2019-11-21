@@ -13,15 +13,16 @@ using Microsoft.Extensions.Hosting;
 
 namespace HoneyBadgers._0
 {
-	public class Startup
-	{
-		public Startup(IConfiguration configuration)
-		{
-			Configuration = configuration;
-		}
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
 
-		public IConfiguration Configuration { get; }
+        public IConfiguration Configuration { get; }
 
+<<<<<<< HEAD
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
@@ -32,28 +33,41 @@ namespace HoneyBadgers._0
 			services.AddDbContext<HoneyBadgerContext>(options =>
 				options.UseSqlServer(
 					Configuration.GetConnectionString("HoneyBadgersDBConnection")));
+=======
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+            //add the context for the honeybadger database
+            services.AddDbContext<HoneyBadgerDBContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("HoneyBadgersDBConnection")));
+>>>>>>> Sprint-3
 
-			services.AddDefaultIdentity<ApplicationUser>()
-				.AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddDefaultIdentity<ApplicationUser>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
 
-			services.AddIdentityServer()
-				.AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
+            services.AddIdentityServer()
+                .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
 
-			services.AddAuthentication()
-				.AddIdentityServerJwt();
+            services.AddAuthentication()
+                .AddIdentityServerJwt();
             //Transient Services
-			//Game
-			services.AddTransient<IGameDal, GameDal>();
-			services.AddTransient<IGameLogic, GameLogic>();
-			//Profile
+            //Game
+            services.AddTransient<IGameDal, GameDal>();
+            services.AddTransient<IGameLogic, GameLogic>();
+            //Profile
             services.AddTransient<IProfileDal, ProfileDal>();
             services.AddTransient<IProfileLogic, ProfileLogic>();
-			//Reviews
+            //Reviews
             services.AddTransient<IReviewDal, ReviewDal>();
             services.AddTransient<IReviewLogic, ReviewLogic>();
-			//Cart
+            //Cart
             services.AddTransient<ICartDal, CartDal>();
             services.AddTransient<ICartLogic, CartLogic>();
+<<<<<<< HEAD
 			//Wishlist
 			services.AddTransient<IWishlistDal, WishlistDal>();
 			services.AddTransient<IWishlistLogic, WishlistLogic>();
@@ -72,55 +86,72 @@ namespace HoneyBadgers._0
 
             services.AddControllersWithViews();
 			services.AddRazorPages();
+=======
+            //Wishlist
+            services.AddTransient<IWishlistDal, WishlistDal>();
+            services.AddTransient<IWishlistLogic, WishlistLogic>();
+            //Events
+            services.AddTransient<IEventDal, EventDal>();
+            services.AddTransient<IEventLogic, EventLogic>();
+            //Friend List
+            services.AddTransient<IFriendshipDal, FriendshipDal>();
+            services.AddTransient<IFriendshipLogic, FriendshipLogic>();
+            //Account
+            services.AddTransient<IAccountDal, AccountDal>();
+            services.AddTransient<IAccountLogic, AccountLogic>();
+>>>>>>> Sprint-3
 
-			// In production, the React files will be served from this directory
-			services.AddSpaStaticFiles(configuration =>
-			{
-				configuration.RootPath = "ClientApp/build";
-			});
-		}
+            services.AddControllersWithViews();
+            services.AddRazorPages();
 
-		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-		{
-			if (env.IsDevelopment())
-			{
-				app.UseDeveloperExceptionPage();
-				app.UseDatabaseErrorPage();
-			}
-			else
-			{
-				app.UseExceptionHandler("/Error");
-				// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-				app.UseHsts();
-			}
+            // In production, the React files will be served from this directory
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "ClientApp/build";
+            });
+        }
 
-			app.UseHttpsRedirection();
-			app.UseStaticFiles();
-			app.UseSpaStaticFiles();
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
 
-			app.UseRouting();
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseSpaStaticFiles();
 
-			app.UseAuthentication();
-			app.UseIdentityServer();
-			app.UseAuthorization();
-			app.UseEndpoints(endpoints =>
-			{
-				endpoints.MapControllerRoute(
-					name: "default",
-					pattern: "{controller}/{action=Index}/{id?}");
-				endpoints.MapRazorPages();
-			});
+            app.UseRouting();
 
-			app.UseSpa(spa =>
-			{
-				spa.Options.SourcePath = "ClientApp";
+            app.UseAuthentication();
+            app.UseIdentityServer();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
+            });
 
-				if (env.IsDevelopment())
-				{
-					spa.UseReactDevelopmentServer(npmScript: "start");
-				}
-			});
-		}
-	}
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "ClientApp";
+
+                if (env.IsDevelopment())
+                {
+                    spa.UseReactDevelopmentServer(npmScript: "start");
+                }
+            });
+        }
+    }
 }

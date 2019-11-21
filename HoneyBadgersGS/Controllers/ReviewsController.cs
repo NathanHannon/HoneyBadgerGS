@@ -1,11 +1,14 @@
+<<<<<<< HEAD
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+=======
+﻿using System.Collections.Generic;
+>>>>>>> Sprint-3
 using HoneyBadgers._0.BusinessLogic;
 using HoneyBadgers._0.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace HoneyBadgers._0.Controllers
 {
