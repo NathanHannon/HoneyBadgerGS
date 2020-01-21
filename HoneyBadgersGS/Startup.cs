@@ -27,11 +27,16 @@ namespace HoneyBadgers._0
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("LocalDBConnection")));
             //add the context for the honeybadger database
-            services.AddDbContext<HoneyBadgerDBContext>(options =>
+            //services.AddDbContext<HoneyBadgerDBContext>(options =>
+            //    options.UseSqlServer(
+            //        Configuration.GetConnectionString("HoneyBadgersDBConnection")));  
+				
+   
+				services.AddDbContext<HoneyBadgerDBContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("HoneyBadgersDBConnection")));
+                    Configuration.GetConnectionString("LocalDBConnection")));
 
             services.AddDefaultIdentity<ApplicationUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();

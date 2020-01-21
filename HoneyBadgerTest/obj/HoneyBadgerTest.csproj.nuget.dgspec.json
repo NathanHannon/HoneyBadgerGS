@@ -1,29 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nathan\\CodeProjects\\HoneyBadgerGS\\HoneyBadgerTest\\HoneyBadgerTest.csproj": {}
+    "C:\\Users\\Kevin\\Downloads\\Sprint 4(1)\\Sprint 4\\HoneyBadgerGS-master\\HoneyBadgerTest\\HoneyBadgerTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nathan\\CodeProjects\\HoneyBadgerGS\\HoneyBadgersGS\\HoneyBadgersGS.csproj": {
+    "C:\\Users\\Kevin\\Downloads\\Sprint 4(1)\\Sprint 4\\HoneyBadgerGS-master\\HoneyBadgersGS\\HoneyBadgersGS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nathan\\CodeProjects\\HoneyBadgerGS\\HoneyBadgersGS\\HoneyBadgersGS.csproj",
+        "projectUniqueName": "C:\\Users\\Kevin\\Downloads\\Sprint 4(1)\\Sprint 4\\HoneyBadgerGS-master\\HoneyBadgersGS\\HoneyBadgersGS.csproj",
         "projectName": "HoneyBadgersGS",
-        "projectPath": "C:\\Users\\Nathan\\CodeProjects\\HoneyBadgerGS\\HoneyBadgersGS\\HoneyBadgersGS.csproj",
-        "packagesPath": "C:\\Users\\Nathan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nathan\\CodeProjects\\HoneyBadgerGS\\HoneyBadgersGS\\obj\\",
+        "projectPath": "C:\\Users\\Kevin\\Downloads\\Sprint 4(1)\\Sprint 4\\HoneyBadgerGS-master\\HoneyBadgersGS\\HoneyBadgersGS.csproj",
+        "packagesPath": "C:\\Users\\Kevin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kevin\\Downloads\\Sprint 4(1)\\Sprint 4\\HoneyBadgerGS-master\\HoneyBadgersGS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nathan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Kevin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -110,6 +114,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.0.2, 3.0.2]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -118,38 +140,42 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Nathan\\CodeProjects\\HoneyBadgerGS\\HoneyBadgerTest\\HoneyBadgerTest.csproj": {
+    "C:\\Users\\Kevin\\Downloads\\Sprint 4(1)\\Sprint 4\\HoneyBadgerGS-master\\HoneyBadgerTest\\HoneyBadgerTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nathan\\CodeProjects\\HoneyBadgerGS\\HoneyBadgerTest\\HoneyBadgerTest.csproj",
+        "projectUniqueName": "C:\\Users\\Kevin\\Downloads\\Sprint 4(1)\\Sprint 4\\HoneyBadgerGS-master\\HoneyBadgerTest\\HoneyBadgerTest.csproj",
         "projectName": "HoneyBadgerTest",
-        "projectPath": "C:\\Users\\Nathan\\CodeProjects\\HoneyBadgerGS\\HoneyBadgerTest\\HoneyBadgerTest.csproj",
-        "packagesPath": "C:\\Users\\Nathan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nathan\\CodeProjects\\HoneyBadgerGS\\HoneyBadgerTest\\obj\\",
+        "projectPath": "C:\\Users\\Kevin\\Downloads\\Sprint 4(1)\\Sprint 4\\HoneyBadgerGS-master\\HoneyBadgerTest\\HoneyBadgerTest.csproj",
+        "packagesPath": "C:\\Users\\Kevin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kevin\\Downloads\\Sprint 4(1)\\Sprint 4\\HoneyBadgerGS-master\\HoneyBadgerTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nathan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Kevin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\Nathan\\CodeProjects\\HoneyBadgerGS\\HoneyBadgersGS\\HoneyBadgersGS.csproj": {
-                "projectPath": "C:\\Users\\Nathan\\CodeProjects\\HoneyBadgerGS\\HoneyBadgersGS\\HoneyBadgersGS.csproj"
+              "C:\\Users\\Kevin\\Downloads\\Sprint 4(1)\\Sprint 4\\HoneyBadgerGS-master\\HoneyBadgersGS\\HoneyBadgersGS.csproj": {
+                "projectPath": "C:\\Users\\Kevin\\Downloads\\Sprint 4(1)\\Sprint 4\\HoneyBadgerGS-master\\HoneyBadgersGS\\HoneyBadgersGS.csproj"
               }
             }
           }
@@ -210,6 +236,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -218,7 +258,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
